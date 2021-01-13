@@ -475,6 +475,8 @@ footer {
   .promise-container img, .img-right {
     position: absolute;
     top: 135px;
+    height: 304px;
+    width: 100%;
   }
   .profile-container {
     height: 625px;
@@ -486,7 +488,6 @@ footer {
   }
   .profile-right {
     width: 100%;
-    padding: 10px;
   }
   .footer-container {
     margin: 0 auto;
