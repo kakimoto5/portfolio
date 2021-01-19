@@ -1,9 +1,23 @@
+$grad: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
 
+$blue: rgb(77, 199, 247);
 
-header {
-  background: #333;
+html {
+  scroll-behavior: smooth;
 }
 
+header {
+  background: $grad;
+  border-bottom: 3px solid $blue;
+}
+// アニメーション
+@keyframes titleAnimation {
+  0% {
+    letter-spacing: .3em;
+    opacity: 0;
+  }
+}
+// アニメーションラスト
 .header-container {
   max-width: 1000px;
   padding: 1.5em;
@@ -15,20 +29,24 @@ header {
 .header-title a {
   text-decoration: none;
   color: #fff;
-  text-shadow:  2px 2px 4px rgb(77, 199, 247);
+  text-shadow:  2px 2px 4px $blue;
 }
 .header-title a:hover {
-  text-shadow:  8px 8px 12px rgb(77, 199, 247);
+  text-shadow:  8px 8px 12px $blue;
 }
 .title-name{
   font-size:30px;
+  white-space: nowrap;
+  animation: titleAnimation 1.5s;
 }
 .title-sub {
   font-size:10px;
   letter-spacing: 1px;
+  white-space: nowrap;
+  animation: titleAnimation 1.5s;
 }
-  .header-nav {
-  max-width: 450px;
+.header-nav {
+  width: 550px;
   font-size: 20px;
   display: flex;
   justify-content: flex-end;
@@ -36,46 +54,42 @@ header {
   font-size: 15px;
   li {
     margin: 0 10px 0 10px;
+    a {
+      color:#fff;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      text-shadow:  2px 2px 4px $blue;
+      
+    }
   }
-  a {
-    text-decoration: none;
-    color:#fff;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    text-shadow:  2px 2px 4px rgb(77, 199, 247);
-
-  }
-  a::after {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    content: '';
-    max-width: 100%;
-    height: 2px;
-    background: rgb(77, 199, 247);
-    transform: scale(0, 1);
-    transform-origin: right top;
-    transition: transform .3s;
-  }
-  a:hover::after {
-    transform-origin: left top;
-    transform: scale(1, 1);
-  }
+}
+a::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  max-width: 100%;
+  height: 2px;
+  background: $blue;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+a:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
 }
 // header last
 
-main {
-  height: 4450px;
-  
+.main-index {
+  height: 4440px;
 }
-
 .main-contents {
   height: 500px;
   margin: 0;
   position: relative;
   z-index: 1;
-
 }
 
 .img-text {
@@ -90,9 +104,8 @@ main {
   text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
-  text-shadow:  4px 4px 8px rgb(77, 199, 247);
+  text-shadow:  4px 4px 8px $blue;
   line-height: 35px;
-
 }
 
 #hoge{
@@ -100,8 +113,7 @@ main {
   height:500px;
   margin:0 auto;
   background-color:#000;
-  border-top: 3px solid rgb(77, 199, 247);
-  border-bottom: 3px solid rgb(77, 199, 247);
+  border-bottom: 3px solid $blue;
 }
 
 // main-img last
@@ -128,7 +140,16 @@ main {
       transform: translate(-50%, -50%);
       font-size: 2em;
       letter-spacing: 4px;
-      text-shadow: 2px 2px 4px rgb(77, 199, 247);
+      font-weight: bold;
+      color: #fff;
+      -webkit-text-stroke: 1px #000;
+      // text-stroke: 1px #000;
+      text-shadow: 2px 2px 4px $blue;
+      text-shadow:
+      1px 1px 0 $blue,
+      -1px 1px 0 $blue,
+      1px -1px 0 $blue,
+      -1px -1px 0 $blue;
     }
   }
 }
@@ -202,40 +223,41 @@ main {
 }
 
 // 製作実績 last
-// 画像左
 .promise-area {
-  height: 390px;
+  max-height: 390px;
   max-width: 100%;
   background: #fff;
 }
 .promise-area-right {
   height: 390px;
   max-width: 100%;
-  background: #333;
+  background: $grad;
 }
+// 画像左
 
 .promise-container {
-  height: 390px;
+  height: 310px;
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
-  img {
-  max-width: 380px;
-  height: 310px;
+  display: flex;
+  margin-bottom: 5em;
+  .promise-img {
+    max-width: 270px;
+    height: 270px;
+    .img-left {
+      max-width: 270px;
+      height: 270px;
+    }
   }
 }
-
 .promise-text-container {
-  max-height: 550px;
-  max-width: 600px;
-  position: absolute;
-  top: 0;
-  right: 5px;
+  max-width: 690px;
+  margin-left: 5px;
 }
 .promise-number {
   max-height: 40px;
   max-width: 40px;
-  background: rgb(77, 199, 247);
+  background: $blue;
   color: #fff;
   padding: 40px 0 10px 0;
   text-align: center;
@@ -246,12 +268,20 @@ main {
 .promise-ttl {
   max-height: 60px;
   font-size: 35px;
+  font-weight: bold;
   padding-top: 15px;
-  color: rgb(77, 199, 247);
+  color: $blue;
+}
+.promise-ttl {
+  max-height: 60px;
+  font-size: 35px;
+  font-weight: bold;
+  padding-top: 15px;
+  color: $blue;
 }
 .promise-sub-ttl {
   max-height: 50px;
-  color: rgb(77, 199, 247);
+  color: $blue;
   font-weight: bold;
   padding-top: 10px;
 }
@@ -259,8 +289,9 @@ main {
   max-height: 200px;
   max-width: 600px;
   font-size: 17px;
+  margin-top: 5px;
   letter-spacing: 0.8px;
-  line-height: 35px;
+  line-height: 25px;
 }
 // 画像左last
 
@@ -269,52 +300,48 @@ main {
   height: 390px;
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
-  background: #333;
+  background: $grad;
+  display: flex;
 }
 .promise-text-container-right {
-  max-width: 600px;
+  max-width: 690px;
   color: #fff;
 }
 
 .img-right{
   max-width: 380px;
   height: 310px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: block;
+  
 }
 
   // プロフィール
 
-.profile-ttl {
-  height: 200px;
-  max-width: 100%;
-  color: #fff;
-}
+
 .profile-area {
   max-width: 100%;
-  background: #333;
+  background-color: #333;
+  background: $grad;
+  border-top: 2px solid $blue;
 }
-
 .profile-container {
   max-width: 1000px;
   height: 520px;
   margin: 0 auto;
   display: flex;
-  background: #333;
 }
 
 .profile-left {
   height: 500px;
   width: 50%;
   text-align: center;
-
+  padding-top: 30px;
+}
   img .photo {
     max-width: 300px;
     min-width: 300px;
   }
-}
+
 .sns-icon {
   height: 60px;
   width: 60px;
@@ -322,6 +349,7 @@ main {
 }
 
 .profile-right {
+  padding-top: 30px;
   height: 500px;
   width: 50%;
   color: #fff;
@@ -331,7 +359,7 @@ main {
   font-size: 15px;
   letter-spacing: 1.5px;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .profile-name2  {
   font-size: 30px;
@@ -353,7 +381,8 @@ main {
 footer {
   max-width: 100%;
   background-color: #333;
-  border-top: 3px solid rgb(77, 199, 247);
+  background: $grad;
+  border-top: solid 1px $blue;
 }
 .footer-container {
   max-width: 1000px;
@@ -362,6 +391,7 @@ footer {
   padding-top: 60px;
   margin-bottom: 20px;
 }
+
 .coopyright {
   color: #fff;
   max-width: 100%;
@@ -371,19 +401,175 @@ footer {
 }
 
 
+.scroll-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 100;
+  background-color: #ddd;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+}
+.scroll-top:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+// works２ページ目
+.main-wo {
+  background: $grad;
+}
+.works {
+  width: 100%;
+  height: 170px;
+  background: $grad;
+  .works-ttl{
+    width: 100%;
+    height: 180px;
+    // background: #fff;
+    .works-ttl-text {
+      font-size: 2.5em;
+      margin: 0 auto;
+      text-align: center;
+      list-style: none;
+      color: #fff;
+      padding-top: 80px;
+      text-shadow: 2px 2px 4px $blue;
+      text-shadow:
+      1px 1px 0 $blue,
+      -1px 1px 0 $blue,
+      1px -1px 0 $blue,
+      -1px -1px 0 $blue;
+    }
+  }
+}
+.works-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 451px;
+  margin: 0 auto;
+  background: $grad;
+  display: flex;
+  justify-content: space-between;
+  .works-container-list {
+    width: 30%;
+    height: 400px;
+    margin-top: 50px;
+    .works-container-img a img {
+      width: 100%;
+      height: 180px;
+    }
+  }
+}
+.works-container-ttl {
+  width: 150px;
+  height: 50px;
+  border: solid 1px $blue;
+  margin: 20px 0 0 20px;
+}
+.works-container-sub-ttl {
+  width: 80%;
+  height: 100px;
+  margin: 20px 20px 0 20px;
+  border: solid 1px $blue;
+}
+
+// works２ページ目終了
+
+// flow３ページ目
+.main-fl{
+  background: $grad;
+}
+.flow-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 2810px;
+  background: $grad;
+  margin: 0 auto;
+  .flow-container-list  {
+    height: 270px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 5em;
+    .flow-container-img {
+      width: 270px;
+      height: 270px;
+      img {
+        width: 270px;
+        height: 270px;
+      }
+    }
+  }
+}
+.flow-container-text {
+  max-width: 730px;
+  .flow-ttl {
+    width: 600px;
+    margin: 30px;
+    list-style: none;
+    font-size: 2em;
+    color: #fff;
+    border-bottom: 1px solid $grad;
+  }
+  .flow-sentence {
+    width: 600px;
+    margin: 0 auto;
+    list-style: none;
+    color: #fff;
+    letter-spacing: 1.5px;
+    line-height: 22px;
+    a {
+      box-sizing: border-box;
+      font-size: 18px;
+      background: $blue;
+      text-align: center;
+      width: 77px;
+      height: 31px;
+      padding-top: 3px;
+      margin-left: 5px;
+      display: inline-block;
+      text-decoration: none;
+      color: #FFF;
+      border-bottom: solid 4px #627295;
+      border-radius: 25px;
+    }
+    
+  }
+}
+.btn-square:hover {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;
+}
+
+
+// flow３ページ目終了
+
+
+
+
+
+
+
+
+
 /* スマホ記述 */
-@media screen and (max-width:  599px) {
-  main {
-    height: 6109px;
+@media (max-width:  699px) {
+  .main-index {
+    height: 6190px;
+    width: 100%;
   }
   .title-name {
     font-size: 1.5em;
   }
   .header-container {
     padding: 0.5em;
-  }
-  .header-nav  {
-    display: none;
   }
   .header-title {
     margin: 0 auto; 
@@ -394,7 +580,6 @@ footer {
   .img-text {
     width: 349px;
   }
-
   .main3 .ttl {
     height: 90px;
   }
@@ -435,7 +620,6 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
   .promise-area, .promise-area-right {
     height: 700px;
   }
@@ -471,9 +655,8 @@ footer {
     height: 304px;
     width: 100%;
   }
-
   .profile-container {
-    height: 625px;
+    height: 705px;
     flex-direction: column;
   }
   .profile-left {
@@ -483,11 +666,162 @@ footer {
   .profile-right {
     width: 100%;
   }
-
   .footer-container {
     margin: 0 auto;
     height: 1px;
     padding-top: 10px;
     margin-bottom: 20px;
-}
+  }
+  .spnav {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    background: $blue;
+    border-radius: 50%;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding-top: 7px;
+    z-index: 3;
+  }
+  .spnav span {
+    width: 20px;
+    height: 2px;
+    background: rgba(51, 51, 51, 0.5);
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+  }
+  .header-nav {
+    background: $grad;
+    z-index: 2;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: translate(100%);
+    transition: 1s;
+    li {
+      list-style: none;
+      padding: 30px;
+      a {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+  .show {
+    transform: translate(0%);
+  }
+
+  // works２ページ目
+  .main-wo {
+    background: $grad;
+  }
+  .works {
+    width: 100%;
+    height: 70px;
+    .works-ttl{
+      height: 50px;
+      .works-ttl-text {
+        font-size: 1em;
+        padding-top: 20px;
+      }
+    }
+  }
+  .works-container {
+    width: 90%;
+    max-width: 375px;
+    height: 1200px;
+    background: $grad;
+    margin: 0 auto;
+    display: block;
+    .works-container-list {
+      width: 100%;
+      height: 400px;
+      margin-top: 0px;
+      .works-container-img a img {
+        width: 100%;
+        height: 180px;
+      }
+    }
+  }
+  .coming {
+    display: none;
+    height: 0;
+  }
+  // works２ページ目終了
+
+  // flow３ページ目
+  
+  .flow-container {
+    width: 100%;
+    height: 4030px;
+    background: $grad;
+    .flow-container-list  {
+      width: 100%;
+      height: 441px;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 5em;
+
+      .flow-container-img {
+        width: 170px;
+        height: 170px;
+        margin: 0 auto;
+        img {
+          width: 170px;
+          height: 170px;
+        }
+      }
+    }
+  }
+  .flow-container-text {
+    max-width: 100%;
+    .flow-ttl {
+      box-sizing: border-box;
+      height: 40px;
+      max-width: 90%;
+      padding: 10px;
+      margin: 10px;
+      font-size: 1.5em;
+    }
+    .flow-sentence {
+      max-width: 90%;
+      letter-spacing: 1.5px;
+      line-height: 22px;
+
+      a {
+        box-sizing: border-box;
+        font-size: 18px;
+        background: $blue;
+        text-align: center;
+        width: 77px;
+        height: 31px;
+        padding-top: 3px;
+        margin-left: 5px;
+        display: inline-block;
+        text-decoration: none;
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 25px;
+      }
+      
+    }
+  }
+  
+
+
+  // flow３ページ目終了
+
+
+
+
+
+
+
+  
 }
