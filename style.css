@@ -221,6 +221,10 @@ a:hover::after {
   }
 }
 
+.promise {
+  height: 180px;
+}
+
 .promise-area {
   max-height: 390px;
   max-width: 100%;
@@ -313,7 +317,7 @@ a:hover::after {
   color: #fff;
 }
 
-.img-right {
+.promis-img .img-right {
   max-width: 380px;
   height: 310px;
   display: block;
@@ -565,7 +569,7 @@ footer {
 /* スマホ記述 */
 @media (max-width: 699px) {
   .main-index {
-    height: 6190px;
+    height: 4240px;
     width: 100%;
   }
   .title-name {
@@ -601,6 +605,7 @@ footer {
     height: 824px;
     margin: 0 auto;
     background: #E5F3FA;
+    padding-bottom: 25px;
   }
   .ttl-container .list-box {
     height: 270px;
@@ -623,14 +628,57 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .promise-area, .promise-area-right {
-    height: 700px;
+  .production {
+    height: 389px;
+    max-width: 100%;
   }
-  .promise-text-container, .promise-text-container-right {
+  .promise {
+    height: 90px;
+  }
+  .promise-xxx {
+    height: 1530px;
+  }
+  .promise-area {
+    width: 100%;
+    height: 290px;
+  }
+  .promise-area .promise-container {
+    position: relative;
+  }
+  .promise-area .promise-container .promis-img {
+    width: 100%;
+    height: 100%;
+  }
+  .promise-area .promise-container .promis-img .img-left {
+    width: 100%;
+    opacity: 0.3;
+  }
+  .promise-text-container {
     width: 100%;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
+  }
+  .promise-area-right {
+    height: 310px;
+  }
+  .promise-area-right .promise-container-right {
+    height: 310px;
+    display: block;
+    position: relative;
+  }
+  .promise-area-right .promise-container-right .promis-img {
+    width: 100%;
+  }
+  .promise-area-right .promise-container-right .promis-img .img-right {
+    opacity: 0.2;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .promise-text-container-right {
+    width: 100%;
   }
   .promise-number {
     margin: 0 auto;
@@ -640,23 +688,18 @@ footer {
   }
   .promise-ttl {
     font-size: 20px;
+    padding-top: 5px;
   }
   .promise-ttl, .promise-sub-ttl {
     margin: 0 auto;
     text-align: center;
+    padding-top: 3px;
   }
   .promise-text {
     padding: 0 5px 0 5px;
     letter-spacing: 1px;
     line-height: 25px;
-    position: absolute;
-    top: 467px;
-  }
-  .promise-container img, .img-right {
-    position: absolute;
-    top: 135px;
-    height: 304px;
-    width: 100%;
+    margin: 0 10px;
   }
   .profile-container {
     height: 705px;
