@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 header {
   background: $grad;
   border-bottom: 3px solid $blue;
@@ -47,7 +48,6 @@ header {
 }
 .header-nav {
   width: 550px;
-  font-size: 20px;
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -55,31 +55,32 @@ header {
   li {
     margin: 0 10px 0 10px;
     a {
-      color:#fff;
       position: relative;
       display: inline-block;
       text-decoration: none;
+      color: #fff;
       text-shadow:  2px 2px 4px $blue;
-      
+      padding-bottom: 5px;
+    }
+    a::after {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: $blue;
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform .3s;
+    }
+    a:hover::after {
+      transform-origin: left top;
+      transform: scale(1, 1);
     }
   }
 }
-a::after {
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  content: '';
-  max-width: 100%;
-  height: 2px;
-  background: $blue;
-  transform: scale(0, 1);
-  transform-origin: right top;
-  transition: transform .3s;
-}
-a:hover::after {
-  transform-origin: left top;
-  transform: scale(1, 1);
-}
+
 // header last
 
 .main-index {
@@ -94,8 +95,8 @@ a:hover::after {
 
 .img-text {
   color: #fff;
-  font-size: 1.5em;
-  max-width: 300px;
+  font-size: 29px;
+  max-width: 370px;
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -138,7 +139,7 @@ a:hover::after {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 2em;
+      font-size: 29px;
       letter-spacing: 4px;
       font-weight: bold;
       color: #fff;
@@ -186,7 +187,7 @@ a:hover::after {
   text-align: center;
   margin: 20px auto;
   padding-top: 180px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -269,13 +270,6 @@ a:hover::after {
   margin-bottom: 10px;
   font-weight: bold;
   font-size: 20px;
-}
-.promise-ttl {
-  max-height: 60px;
-  font-size: 35px;
-  font-weight: bold;
-  padding-top: 15px;
-  color: $blue;
 }
 .promise-ttl {
   max-height: 60px;
@@ -440,7 +434,7 @@ footer {
     height: 180px;
     // background: #fff;
     .works-ttl-text {
-      font-size: 2.5em;
+      font-size: 30px;
       margin: 0 auto;
       text-align: center;
       list-style: none;
@@ -498,7 +492,7 @@ footer {
   height: 2810px;
   background: $grad;
   margin: 0 auto;
-  .flow-container-list  {
+  .flow-container-list, .flow-container-list3 {
     height: 270px;
     max-width: 1000px;
     margin: 0 auto;
@@ -520,7 +514,7 @@ footer {
     width: 600px;
     margin: 30px;
     list-style: none;
-    font-size: 2em;
+    font-size: 35px;
     color: #fff;
     border-bottom: 1px solid $grad;
   }
@@ -531,6 +525,7 @@ footer {
     color: #fff;
     letter-spacing: 1.5px;
     line-height: 22px;
+    font-size: 15px;
     a {
       box-sizing: border-box;
       font-size: 18px;
@@ -558,22 +553,160 @@ footer {
 
 // flow３ページ目終了
 
+/////////price４ページ目///////////
+.price {
+  height: 2000px;
+  background: $grad;
 
+}
+.price-ttl-container {
+  width: 100%;
+  background: $grad;
+}
+.price-ttl {
+  height: 103px;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0  auto;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 35px;
+  color: #fff;
+  background: $grad;
 
+}
+.price-sub-ttl {
+  height: 80px;
+  max-width: 1000px;
+  width: 90%;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 26px;
+  color: #fff;
+  background: $grad;
+  margin: 0 auto;
+}
 
+.price-example {
+  height: 570px;
+  width: 100%;
+  background: $grad;
+  color: #fff;
+  .price-container {
+    width: 95%;
+    height: 568px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    .price-box1 {
+      height: 568px;
+      max-width: 450px;
+      width: 45%;
+      margin: 0 auto;
+    }
+  }
+}
+.price-box-text {
+  height: 80px;
+  line-height: 45px;
+  font-size: 25px;
+  span {
+    background: $blue;
+    padding: 10px;
+    border-radius: 46px;
+  }
+}
+.price-box-subtext {
+  height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding-top: 18px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid $blue;
+}
 
+.price-box-contents1 {
+  height: 220px;
+  text-align: left;
+  font-size: 15px;
+  dt {
+    height: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  dd {
+    height: 40px;
+    margin-bottom: 10px;
+  }
+}
 
+.price-box-contents2 {
+  height: 220px;
+  h4 {
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  ul li {
+    height: 40px;
+    text-align: left;
+    font-size: 15px;
+  }
+}
+.details-container {
+  height: 800px;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 71px;
+  box-sizing: border-box;
+  table {
+    width: 100%;
+    font-size: 15px;
+  }
+  .table1, .table2 {
+    height: 60px;
+    border-bottom: 2px solid $blue;
+  }
+}
+th {
+  padding: 20px;
+  width: 60%;
+  text-align: left;
+}
+td {
+  text-align: right;
+  padding-right: 10px;
+}
+.etc {
+  margin-top: 20px;
+  // line-height: 24px;
 
+}
+/////////price４ページ目終了///////////
+@media screen and (min-width: 699px){	
+  .br-pc { display:block; }
+  .br-sp { display:none; }
+}
+@media screen and (max-width: 699px){	
+  .br-pc { display:none; }
+  .br-sp { display:block; }
+}
 
-
-/* スマホ記述 */
+//////////////レスポンシブ/////////////
 @media (max-width:  699px) {
   .main-index {
     height: 4240px;
     width: 100%;
   }
   .title-name {
-    font-size: 1.5em;
+    font-size: 25px;
   }
   .header-container {
     padding: 0.5em;
@@ -593,7 +726,7 @@ footer {
   .main3 .ttl .ttl-text {
     height: 30px;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 23px;
   }
   .profile-ttl {
     height: 90px;
@@ -660,7 +793,7 @@ footer {
     width: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -5px;
   }
   /////////////画像右////
   
@@ -722,7 +855,8 @@ footer {
     text-align: center;
   }
   .profile-right {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   .footer-container {
     margin: 0 auto;
@@ -785,7 +919,7 @@ footer {
     .works-ttl{
       height: 50px;
       .works-ttl-text {
-        font-size: 1em;
+        font-size: 23px;
         padding-top: 20px;
       }
     }
@@ -817,26 +951,32 @@ footer {
   
   .flow-container {
     width: 100%;
-    height: 4030px;
+    height: 4200px;
     background: $grad;
     .flow-container-list  {
       width: 100%;
-      height: 441px;
+      height: 557px;
       margin: 0 auto;
       display: block;
-      margin-bottom: 5em;
+      margin-bottom: 15px;
 
       .flow-container-img {
-        width: 170px;
-        height: 170px;
-        margin: 0 auto;
+        
         img {
-          width: 170px;
-          height: 170px;
+          width: 100vw;
+          height: 250px;
         }
       }
     }
   }
+  .flow-container-list3 {
+    height: 470px;
+    img {
+      width: 100vw;
+      height: 250px;
+    }
+  }
+
   .flow-container-text {
     max-width: 100%;
     .flow-ttl {
@@ -845,7 +985,9 @@ footer {
       max-width: 90%;
       padding: 10px;
       margin: 10px;
-      font-size: 1.5em;
+      font-size: 21px;
+      color: $blue;
+      font-weight: bold;
     }
     .flow-sentence {
       max-width: 90%;
@@ -870,12 +1012,43 @@ footer {
       
     }
   }
-  
-
 
   // flow３ページ目終了
 
+  ////4ページ目//////
+  .price {
+    height: 2750px;
+  }
+  .price-ttl-container {
+    height: 173px;
 
+    .price-ttl {
+      width: 99%;
+      font-size: 16px;
+    }
+  }
+
+  .price-example {
+    height: 1000px;
+    margin-top: 100px;
+    .price-container {
+      display: block;
+      height: 1200px;
+      width: 95%;
+      .price-box1 {
+      width: 100%;
+      margin-bottom: 30px;
+      }
+    }
+  }
+  .price-sub-ttl {
+    width: 100%;
+    font-size: 14px;
+  }
+  .details-container {
+    margin-top: 30px;
+    width: 90%;
+  }
 
 
 
