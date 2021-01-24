@@ -21,7 +21,7 @@ header {
 // アニメーションラスト
 .header-container {
   max-width: 1000px;
-  padding: 1.5em;
+  padding: 25px 10px 25px 10px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -47,13 +47,13 @@ header {
   animation: titleAnimation 1.5s;
 }
 .header-nav {
-  width: 550px;
+  width: 483px;
   display: flex;
   justify-content: flex-end;
   list-style: none;
   font-size: 15px;
   li {
-    margin: 0 10px 0 10px;
+    margin: 0 9px;
     a {
       position: relative;
       display: inline-block;
@@ -84,7 +84,7 @@ header {
 // header last
 
 .main-index {
-  height: 4440px;
+  height: 4040px;
 }
 .main-contents {
   height: 500px;
@@ -142,8 +142,8 @@ header {
       font-size: 29px;
       letter-spacing: 4px;
       font-weight: bold;
-      color: #fff;
-      -webkit-text-stroke: 1px #000;
+      color: #333;
+      // -webkit-text-stroke: 1px #000;
       // text-stroke: 1px #000;
       text-shadow: 2px 2px 4px $blue;
       text-shadow:
@@ -234,28 +234,31 @@ header {
   background: #fff;
 }
 .promise-area-right {
-  height: 390px;
+  height: 310px;
   max-width: 100%;
   background: $grad;
 }
-// 画像左
+
+// 画像左//
 
 .promise-container {
   height: 310px;
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  
-  margin-bottom: 5em;
   .promise-img {
     max-width: 270px;
-    height: 270px;
+    height: 310px;
     .img-left {
       max-width: 270px;
-      height: 270px;
+      height: 310px;
     }
   }
 }
+// .promise-area5 {
+//   height: 363px;
+
+// }
 .promise-text-container {
   max-width: 690px;
   margin-left: 5px;
@@ -296,7 +299,7 @@ header {
 
 // 画像右
 .promise-container-right {
-  height: 390px;
+  height: 310px;
   max-width: 1000px;
   margin: 0 auto;
   background: $grad;
@@ -307,7 +310,7 @@ header {
   color: #fff;
 }
 
-.promis-img {
+.promise-img {
 
   .img-right{
     max-width: 380px;
@@ -452,15 +455,15 @@ footer {
 .works-container {
   width: 100%;
   max-width: 1000px;
-  height: 451px;
+  height: 294px;
   margin: 0 auto;
   background: $grad;
   display: flex;
   justify-content: space-between;
   .works-container-list {
     width: 30%;
-    height: 400px;
-    margin-top: 50px;
+    height: 273px;
+    margin-top: 20px;
     .works-container-img a img {
       width: 100%;
       height: 180px;
@@ -468,16 +471,21 @@ footer {
   }
 }
 .works-container-ttl {
-  width: 150px;
+  width: 198px;
   height: 50px;
-  border: solid 1px $blue;
+  // border: solid 1px $blue;
   margin: 20px 0 0 20px;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .works-container-sub-ttl {
   width: 80%;
   height: 100px;
   margin: 20px 20px 0 20px;
   border: solid 1px $blue;
+  color: #fff;
+
 }
 
 // works２ページ目終了
@@ -779,12 +787,13 @@ td {
     height: 290px;
     .promise-container {
       position: relative;
-      .promis-img {
-        width: 100%;
-        height: 100%;
+      .promise-img {
+        min-width: 375px;
+        margin: 0 auto;
         .img-left {
-        width: 100%;
-        opacity: 0.3;
+          height: 290px;
+          min-width: 375px;
+          opacity: 0.3;
         }
       }
     }
@@ -804,7 +813,7 @@ td {
       height: 310px;
       display: block;
       position: relative;
-      .promis-img {
+      .promise-img {
         width: 100%;
         .img-right {
           opacity: 0.2;
@@ -819,6 +828,21 @@ td {
   .promise-text-container-right {
     width: 100%;
   }
+  // .promise-area5 {
+  //   width: 100%;
+  //   height: 290px;
+  //   .promise-container {
+  //     position: relative;
+  //     .promise-img {
+  //       width: 100%;
+  //       height: 100%;
+  //       .img-left {
+  //       width: 100%;
+  //       opacity: 0.3;
+  //       }
+  //     }
+  //   }
+  // }
 
   ////////プロミス共通/////////
   .promise-number {
@@ -864,6 +888,9 @@ td {
     padding-top: 10px;
     margin-bottom: 20px;
   }
+  
+
+
   .spnav {
     box-sizing: border-box;
     width: 40px;
@@ -879,7 +906,7 @@ td {
   .spnav span {
     width: 20px;
     height: 2px;
-    background: rgba(51, 51, 51, 0.5);
+    background: #000;
     display: block;
     margin: 0 auto;
     margin-top: 5px;

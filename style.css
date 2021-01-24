@@ -17,7 +17,7 @@ header {
 
 .header-container {
   max-width: 1000px;
-  padding: 1.5em;
+  padding: 25px 10px 25px 10px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,7 @@ header {
 }
 
 .header-nav {
-  width: 550px;
+  width: 483px;
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -56,7 +56,7 @@ header {
 }
 
 .header-nav li {
-  margin: 0 10px 0 10px;
+  margin: 0 9px;
 }
 
 .header-nav li a {
@@ -87,7 +87,7 @@ header {
 }
 
 .main-index {
-  height: 4440px;
+  height: 4040px;
 }
 
 .main-contents {
@@ -147,8 +147,7 @@ header {
   font-size: 29px;
   letter-spacing: 4px;
   font-weight: bold;
-  color: #fff;
-  -webkit-text-stroke: 1px #000;
+  color: #333;
   text-shadow: 2px 2px 4px #4dc7f7;
   text-shadow: 1px 1px 0 #4dc7f7, -1px 1px 0 #4dc7f7, 1px -1px 0 #4dc7f7, -1px -1px 0 #4dc7f7;
 }
@@ -232,7 +231,7 @@ header {
 }
 
 .promise-area-right {
-  height: 390px;
+  height: 310px;
   max-width: 100%;
   background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0/15px 15px;
 }
@@ -242,17 +241,16 @@ header {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  margin-bottom: 5em;
 }
 
 .promise-container .promise-img {
   max-width: 270px;
-  height: 270px;
+  height: 310px;
 }
 
 .promise-container .promise-img .img-left {
   max-width: 270px;
-  height: 270px;
+  height: 310px;
 }
 
 .promise-text-container {
@@ -297,7 +295,7 @@ header {
 }
 
 .promise-container-right {
-  height: 390px;
+  height: 310px;
   max-width: 1000px;
   margin: 0 auto;
   background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0/15px 15px;
@@ -309,7 +307,7 @@ header {
   color: #fff;
 }
 
-.promis-img .img-right {
+.promise-img .img-right {
   max-width: 380px;
   height: 310px;
   display: block;
@@ -451,7 +449,7 @@ footer {
 .works-container {
   width: 100%;
   max-width: 1000px;
-  height: 451px;
+  height: 294px;
   margin: 0 auto;
   background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0/15px 15px;
   display: flex;
@@ -460,8 +458,8 @@ footer {
 
 .works-container .works-container-list {
   width: 30%;
-  height: 400px;
-  margin-top: 50px;
+  height: 273px;
+  margin-top: 20px;
 }
 
 .works-container .works-container-list .works-container-img a img {
@@ -470,10 +468,12 @@ footer {
 }
 
 .works-container-ttl {
-  width: 150px;
+  width: 198px;
   height: 50px;
-  border: solid 1px #4dc7f7;
   margin: 20px 0 0 20px;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .works-container-sub-ttl {
@@ -481,6 +481,7 @@ footer {
   height: 100px;
   margin: 20px 20px 0 20px;
   border: solid 1px #4dc7f7;
+  color: #fff;
 }
 
 .main-fl {
@@ -805,12 +806,13 @@ td {
   .promise-area .promise-container {
     position: relative;
   }
-  .promise-area .promise-container .promis-img {
-    width: 100%;
-    height: 100%;
+  .promise-area .promise-container .promise-img {
+    min-width: 375px;
+    margin: 0 auto;
   }
-  .promise-area .promise-container .promis-img .img-left {
-    width: 100%;
+  .promise-area .promise-container .promise-img .img-left {
+    height: 290px;
+    min-width: 375px;
     opacity: 0.3;
   }
   .promise-text-container {
@@ -827,10 +829,10 @@ td {
     display: block;
     position: relative;
   }
-  .promise-area-right .promise-container-right .promis-img {
+  .promise-area-right .promise-container-right .promise-img {
     width: 100%;
   }
-  .promise-area-right .promise-container-right .promis-img .img-right {
+  .promise-area-right .promise-container-right .promise-img .img-right {
     opacity: 0.2;
     width: 100%;
     position: absolute;
@@ -894,7 +896,7 @@ td {
   .spnav span {
     width: 20px;
     height: 2px;
-    background: rgba(51, 51, 51, 0.5);
+    background: #000;
     display: block;
     margin: 0 auto;
     margin-top: 5px;
